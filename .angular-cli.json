@@ -19,7 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "aol",
       "styles": [
-        "styles.css"
+        "../node_modules/materialize-css/dist/css/materialize.min.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
