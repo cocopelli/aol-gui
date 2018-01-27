@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { SongListComponent } from './song-list/song-list.component';
 import { SongListItemComponent } from './song-list-item/song-list-item.component';
 import {SongStoreService} from './shared/song-store.service';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SongListComponent,
-    SongListItemComponent
+    SongListItemComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
