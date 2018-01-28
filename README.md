@@ -1,4 +1,4 @@
-# AOLGUI
+# AOL-GUI
 
 And One Frontend
 
