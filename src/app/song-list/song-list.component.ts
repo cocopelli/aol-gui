@@ -5,7 +5,7 @@ import {SongStoreService} from '../shared/song-store.service';
 @Component({
   selector: 'aol-song-list',
   templateUrl: './song-list.component.html',
-  styleUrls: ['./song-list.component.css']
+  styleUrls: ['./song-list.component.scss']
 })
 export class SongListComponent implements OnInit {
   songs: Song[];
