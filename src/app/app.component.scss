@@ -1,23 +1,28 @@
-.header {
+//.header {
+//  width: 100%;
+//  background-color: #000;
+//  position: absolute;
+//}
+//
+//.container {
+//  color: white;
+//  height: 20%;
+//}
+
+.row {
+  background-color: black;
   width: 100%;
-  height: 15%;
-  background-color: #000;
-  position: absolute;
-}
-
-.container {
   color: white;
-  height: 20%;
-}
-
-.page-footer {
-  position: absolute;
+  height: 60px;
+  font-size: large;
+  margin-bottom: 0px;
 }
 
 .footer-copyright {
   position: absolute;
-  bottom: 0;
+  bottom: -100px;
   background-color: #000;
   width: 100%;
-  height: 15%;
+  color: white;
+  padding-top: 30px;
 }

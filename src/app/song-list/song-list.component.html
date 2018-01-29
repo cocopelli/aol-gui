@@ -1,14 +1,16 @@
-<div class="container">
-  <table class="bordered highlight">
-    <thead>
-    <tr>
-      <td>Titel</td>
-      <td>Länge</td>
-    </tr>
-    </thead>
+<div class="row">
+  <div class="container">
+    <table class="bordered highlight">
+      <thead>
+      <tr>
+        <th>Titel</th>
+        <th>Länge</th>
+      </tr>
+      </thead>
 
-    <tbody>
-    <tr class="aol-song-list-item" *ngFor="let s of songs" [song]="s" [routerLink]="s.id"></tr>
-    </tbody>
-  </table>
+      <tbody>
+      <tr class="aol-song-list-item" *ngFor="let s of songs" [song]="s" [routerLink]="s.id"></tr>
+      </tbody>
+    </table>
+  </div>
 </div>
