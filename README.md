@@ -1,3 +1,9 @@
+[![Github Tag][github-tag-image]][github-tag-url]
+[![Build Status][travis-image]][travis-url]
+[![Dependency Status][david-dep-image]][david-dep-url]
+[![DevDependencies Status][david-devdep-image]][david-devdep-url]
+[![License][license-image]][license-url]
+
 # AOL-GUI
 
 And One Frontend
@@ -27,3 +33,20 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+***
+
+[github-tag-image]: https://img.shields.io/github/tag/cocopelli/aol-gui.svg?style=flat-square
+[github-tag-url]: https://github.com/cocopelli/aol-gui
+
+[travis-image]: https://img.shields.io/travis/cocopelli/aol-gui.svg?style=flat-square
+[travis-url]: https://travis-ci.org/cocopelli/aol-gui
+
+[david-dep-image]: https://img.shields.io/david/cocopelli/aol-gui.svg?style=flat-square
+[david-dep-url]: https://david-dm.org/cocopelli/aol-gui
+
+[david-devdep-image]: https://img.shields.io/david/dev/cocopelli/aol-gui.svg?style=flat-square
+[david-devdep-url]: https://david-dm.org/cocopelli/aol-gui?type=dev
+
+[license-image]: https://img.shields.io/github/license/cocopelli/aol-gui.svg?style=flat-square
+[license-url]: https://github.com/cocopelli/aol-gui/blob/master/LICENSE
