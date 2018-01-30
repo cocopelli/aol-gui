@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Song, Lyric} from './song';
 
 @Injectable()
@@ -36,6 +36,10 @@ export class SongStoreService {
 
   getAll() {
     return this.songs;
+  }
+
+  getSingle(id) {
+    return this.songs.find(song => song.id === id);
   }
 
 }

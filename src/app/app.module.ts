@@ -8,6 +8,7 @@ import { SongListComponent } from './song-list/song-list.component';
 import { SongListItemComponent } from './song-list-item/song-list-item.component';
 import {SongStoreService} from './shared/song-store.service';
 import { HomeComponent } from './home/home.component';
+import { SongDetailsComponent } from './song-details/song-details.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     SongListComponent,
     SongListItemComponent,
-    HomeComponent
+    HomeComponent,
+    SongDetailsComponent
   ],
   imports: [
     BrowserModule,
