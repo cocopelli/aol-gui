@@ -8,7 +8,6 @@ notifications:
   slack: cocopelli:6JlTKnvCxaLohTdDMGfu5urE
 
 cache:
-  yarn: true
   directories:
      - ./node_modules
 
@@ -29,7 +28,7 @@ before_script:
     - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
 
 script:
-  - yarn run ci
+  - npm run ci
 
 after_success:
-  - 'cat ./coverage/lcov.info | ./node_modules/.bin/coveralls'
+  - 'cat ./coverage/lcov.info'
