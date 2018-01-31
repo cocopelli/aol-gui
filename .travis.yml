@@ -28,8 +28,8 @@ before_script:
     - "sudo chown root /opt/google/chrome/chrome-sandbox"
     - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
 
-#script:
-#  - yarn run ci
+script:
+  - yarn run ci
 
 after_success:
   - 'cat ./coverage/lcov.info | ./node_modules/.bin/coveralls'
