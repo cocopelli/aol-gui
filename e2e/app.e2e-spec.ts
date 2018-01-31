@@ -9,6 +9,6 @@ describe('aol-gui App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to aol!');
+    expect(page.getParagraphText()).toEqual('Willkommen Freunde der "guten" Musik');
   });
 });
