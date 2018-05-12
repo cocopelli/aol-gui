@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="container">
+  <div class="container" >
     <table class="bordered highlight">
       <thead>
       <tr>
@@ -9,7 +9,9 @@
       </thead>
 
       <tbody>
-      <tr class="aol-song-list-item" *ngFor="let s of songs" [song]="s" [routerLink]="s.id"></tr>
+      <tr *ngFor="let s of songs" [routerLink]="s.id">
+        <td>{{ s.title }}</td>
+      </tr>
       </tbody>
     </table>
   </div>
