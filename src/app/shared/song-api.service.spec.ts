@@ -28,7 +28,7 @@ describe('SongApiService', () => {
     it('should return an Observable<Song[]>', () => {
       const expectSongs: Song[] = [
         new Song('123abc', 'Hyper Hyper', 123, 'Hyper12 Hyper12', 'The first song', '789xyz'),
-        new Song('456def', 'Yipie Yipie', 456, 'Yipie23 Yipie23', 'The secound song', '678hij')
+        new Song('456def', 'Yipie Yipie', 456, 'Yipie23 Yipie23', 'The second song', '678hij')
       ];
       service.getAll().subscribe(songs => {
         expect(songs.length).toBe(2);

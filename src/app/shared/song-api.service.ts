@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
 import {Song} from './song';
 import {SongRaw} from './song-raw';
 import {catchError, map, retry} from 'rxjs/operators';
 import {SongFactory} from './song-factory';
+import {Observable} from 'rxjs/internal/Observable';
 
 @Injectable()
 export class SongApiService {
