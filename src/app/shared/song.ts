@@ -1,6 +1,3 @@
-import { Lyric } from './lyric';
-export { Lyric } from './lyric';
-
 export class Song {
   constructor(
     public id: string,
@@ -8,6 +5,6 @@ export class Song {
     public duration: number,
     public subtitle?: string,
     public description?: string,
-    public lyric?: Lyric
+    public lyricId?: string
   ) {}
 }

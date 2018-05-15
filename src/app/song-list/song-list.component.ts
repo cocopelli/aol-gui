@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Song} from '../shared/song';
-import {SongStoreService} from '../shared/song-store.service';
+import {SongApiService} from '../shared/song-api.service';
 
 @Component({
   selector: 'aol-song-list',
@@ -10,11 +10,11 @@ import {SongStoreService} from '../shared/song-store.service';
 export class SongListComponent implements OnInit {
   songs: Song[];
 
-  constructor(private ss: SongStoreService) {
+  constructor(private ss: SongApiService) {
   }
 
   ngOnInit() {
-    this.songs = this.ss.getAll();
+    this.ss.getAll().subscribe(res => this.songs = res);
   }
 
 }
