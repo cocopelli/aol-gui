@@ -1,4 +1,4 @@
-import {TestBed, inject, getTestBed} from '@angular/core/testing';
+import {TestBed, getTestBed} from '@angular/core/testing';
 
 import {SongApiService} from './song-api.service';
 import {Song} from './song';
@@ -29,6 +29,14 @@ describe('SongApiService', () => {
     httpMock = injector.get(HttpTestingController);
   });
 
+  afterEach(() => {
+    httpMock.verify();
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+
   describe('#getSongs', () => {
 
     it('should return an Observable<Song[]>', () => {
@@ -43,36 +51,20 @@ describe('SongApiService', () => {
       expect(req.request.method).toBe('GET');
       req.flush(expectSongs);
     });
-  });
 
-  it('shpuld get the correct single song', () => {
 
-    service.getSingle('123abc').subscribe(song => {
-      expect(song.title).toBe('Hyper Hyper');
-      expect(song).toEqual(expectSongs[0]);
+    it('shpuld get the correct single song', () => {
+
+      service.getSingle('123abc').subscribe(song => {
+        expect(song.title).toBe('Hyper Hyper');
+        expect(song).toEqual(expectSongs[0]);
+      });
+
+      const req = httpMock.expectOne(`${service.api}/123abc`);
+      expect(req.request.method).toBe('GET');
+      req.flush(expectSongs[0]);
     });
 
-    const req = httpMock.expectOne(`${service.api}/123abc`);
-    expect(req.request.method).toBe('GET');
-    req.flush(expectSongs[0]);
-
   });
 
-  it('should throw error', () => {
-
-    service.getSingle('3434').subscribe((error) => {
-      expect(error).toThrow(new Error());
-      console.log(error);
-      }
-    );
-
-    const req = httpMock.expectOne(`${service.api}/3434`);
-    expect(req.error).toThrow();
-    req.flush(null);
-  });
-
-
-  it('should be created', inject([SongApiService], (apiService: SongApiService) => {
-    expect(apiService).toBeTruthy();
-  }));
 });
