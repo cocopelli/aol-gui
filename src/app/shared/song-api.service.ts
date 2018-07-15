@@ -2,14 +2,15 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Song} from './song';
 import {SongRaw} from './song-raw';
-import {catchError, map, retry} from 'rxjs/operators';
+import {catchError, map} from 'rxjs/operators';
 import {SongFactory} from './song-factory';
 import {Observable} from 'rxjs/internal/Observable';
+import {throwError} from 'rxjs/internal/observable/throwError';
 
 @Injectable()
 export class SongApiService {
 
-  readonly api = 'http://localhost:3000/api/v1/songs';
+  readonly api = 'http://localhost:3000/api/v1/Songs';
 
   constructor(private http: HttpClient) {
   }
@@ -59,7 +60,7 @@ export class SongApiService {
   }
 
   private errorHandler(error: Error | any): Observable<any> {
-    return Observable.throw(error);
+    return throwError(error);
   }
 
 }

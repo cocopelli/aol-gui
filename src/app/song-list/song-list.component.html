@@ -11,6 +11,7 @@
       <tbody>
       <tr *ngFor="let s of songs" [routerLink]="s.id">
         <td>{{ s.title }}</td>
+        <td>{{ s.duration }}</td>
       </tr>
       </tbody>
     </table>
