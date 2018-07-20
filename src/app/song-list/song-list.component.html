@@ -9,11 +9,14 @@
       </thead>
 
       <tbody>
-      <tr *ngFor="let s of songs" [routerLink]="s.id">
+      <tr *ngFor="let s of songs" [routerLink]="s._id">
         <td>{{ s.title }}</td>
         <td>{{ s.duration }}</td>
       </tr>
       </tbody>
     </table>
+    <div *ngIf="!songs">Daten werden geladen...</div>
+    <p *ngIf="songs && !songs.length">Es wurden noch keine Songs eingetragen.</p>
+    <a routerLink="../songs/admin" class="waves-effect waves-light btn">Song-Admin</a>
   </div>
 </div>

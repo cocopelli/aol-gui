@@ -1,5 +1,5 @@
 export interface SongRaw {
-  id: string;
+  _id: string;
   title: string;
   duration: number;
   subtitle: string;
