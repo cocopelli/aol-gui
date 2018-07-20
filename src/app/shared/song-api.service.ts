@@ -45,7 +45,7 @@ export class SongApiService {
 
   update(song: Song): Observable<any> {
     return this.http
-      .put(`${this.api}/${song.id}`, song, {responseType: 'text'})
+      .put(`${this.api}/${song._id}`, song, {responseType: 'text'})
       .pipe(
         catchError(this.errorHandler)
       );

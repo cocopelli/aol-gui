@@ -54,7 +54,7 @@ export class SongFormComponent implements OnInit {
 
     if (this.isUpdatingSong) {
       this.ss.update(song).subscribe(res => {
-        this.router.navigate(['../../songs', song.id], {relativeTo: this.route});
+        this.router.navigate(['../../songs', song._id], {relativeTo: this.route});
       });
     } else {
       this.ss.create(song).subscribe(res => {
