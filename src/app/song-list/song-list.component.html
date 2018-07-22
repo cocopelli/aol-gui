@@ -9,7 +9,7 @@
       </thead>
 
       <tbody>
-      <tr *ngFor="let s of songs" [routerLink]="s._id">
+      <tr id="listItem" *ngFor="let s of songs" [routerLink]="s._id">
         <td>{{ s.title }}</td>
         <td>{{ s.duration }}</td>
       </tr>
