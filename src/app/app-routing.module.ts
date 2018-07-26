@@ -24,11 +24,11 @@ const routes: Routes = [
     component: SongDetailsComponent
   },
   {
-    path: 'songs/admin',
+    path: 'admin/songs',
     component: SongFormComponent
   },
   {
-    path: 'songs/admin/:id',
+    path: 'admin/songs/:id',
     component: SongFormComponent
   }
 ];

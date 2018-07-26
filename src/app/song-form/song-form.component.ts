@@ -40,6 +40,7 @@ export class SongFormComponent implements OnInit {
 
   initSong() {
     this.myForm = this.fb.group({
+      _id: this.route.snapshot.params['id'],
       title: [this.song.title, Validators.required],
       duration: [this.song.duration, Validators.required],
       lyricId: [this.song.lyricId, Validators.required],
@@ -53,8 +54,10 @@ export class SongFormComponent implements OnInit {
     const song: Song = SongFactory.fromObject(this.myForm.value);
 
     if (this.isUpdatingSong) {
+      console.log(song);
       this.ss.update(song).subscribe(res => {
-        this.router.navigate(['../../songs', song._id], {relativeTo: this.route});
+
+        this.router.navigate(['../../../songs', song._id], {relativeTo: this.route});
       });
     } else {
       this.ss.create(song).subscribe(res => {
