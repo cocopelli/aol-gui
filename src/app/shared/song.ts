@@ -1,10 +1,10 @@
 export class Song {
   constructor(
-    public id: string,
+    public _id: string,
     public title: string,
     public duration: number,
+    public lyricId: string,
     public subtitle?: string,
-    public description?: string,
-    public lyricId?: string
+    public description?: string
   ) {}
 }

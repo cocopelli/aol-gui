@@ -1,0 +1,25 @@
+<h1>Songformular</h1>
+<div class="row">
+  <form class="col s12" [formGroup]="myForm" (ngSubmit)="submitForm()">
+    <div class="row">
+      <div class="input-field col s12">
+        <input formControlName="title" id="title" type="text" class="validate">
+        <label for="title">Titel</label>
+      </div>
+      <div class="input-field col s12">
+        <input formControlName="subtitle" id="subtitle" type="text">
+        <label for="subtitle">Untertitel</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="duration" id="duration" type="number" class="validate">
+        <label for="duration">Song-Länge</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="lyricId" id="lyricId" type="text" class="validate">
+        <label for="lyricId">Sontext-Id</label>
+      </div>
+    </div>
+
+    <button class="waves-effect waves-light btn" [disabled]="myForm.invalid">Speichern</button>
+  </form>
+</div>

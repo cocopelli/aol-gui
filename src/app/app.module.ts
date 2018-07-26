@@ -8,18 +8,24 @@ import { SongListComponent } from './song-list/song-list.component';
 import { HomeComponent } from './home/home.component';
 import {SongApiService} from './shared/song-api.service';
 import {HttpClientModule} from '@angular/common/http';
+import { SongFormComponent } from './song-form/song-form.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import { SongDetailsComponent } from './song-details/song-details.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SongListComponent,
-    HomeComponent
+    HomeComponent,
+    SongFormComponent,
+    SongDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [SongApiService],
   bootstrap: [AppComponent]

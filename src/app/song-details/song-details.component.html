@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>{{ song.title }}</h1>
+  <h3>{{ song.subtitle }}</h3>
+  <div class="row">
+    <div class="col s3">
+      <p>Song-Länge: {{ song.duration }}</p>
+    </div>
+    <p class="col s3">Lyric-ID: {{ song.lyricId }}id</p>
+    <p class="col s6">Song-ID: {{ song._id }}</p>
+  </div>
+  <div class="row">
+
+    <button class="waves-effect waves-light red btn">
+      <i>Song löschen</i>
+    </button>
+
+    <a class="waves-effect waves-light btn" [routerLink]="['../../admin/songs', song._id]">Song bearbeiten</a>
+
+  </div>
+</div>
+

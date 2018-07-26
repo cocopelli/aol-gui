@@ -9,12 +9,12 @@ export class SongFactory {
 
   static fromObject(rawSong: SongRaw | any): Song {
     return new Song(
-      rawSong.id,
+      rawSong._id,
       rawSong.title,
       rawSong.duration,
+      rawSong.lyricId,
       rawSong.subtitle,
-      rawSong.description,
-      rawSong.lyricId
+      rawSong.description
     );
   }
 }

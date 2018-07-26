@@ -67,4 +67,17 @@ describe('SongApiService', () => {
 
   });
 
+  // it('should throw error', () => {
+  //
+  //   service.getSingle('3434').subscribe((error) => {
+  //       expect(error).toThrow(new Error());
+  //       console.log(error);
+  //     }
+  //   );
+  //
+  //   const req = httpMock.expectOne(`${service.api}/3434`);
+  //   expect(req.error).toThrow();
+  //   req.flush(null);
+  // });
+
 });

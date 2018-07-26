@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {SongListComponent} from './song-list/song-list.component';
+import {SongFormComponent} from './song-form/song-form.component';
+import {SongDetailsComponent} from './song-details/song-details.component';
 
 const routes: Routes = [
   {
@@ -16,6 +18,18 @@ const routes: Routes = [
   {
     path: 'songs',
     component: SongListComponent
+  },
+  {
+    path: 'songs/:id',
+    component: SongDetailsComponent
+  },
+  {
+    path: 'admin/songs',
+    component: SongFormComponent
+  },
+  {
+    path: 'admin/songs/:id',
+    component: SongFormComponent
   }
 ];
 
