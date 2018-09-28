@@ -2,13 +2,14 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 // import {Location} from '@angular/common';
 
 import {SongListComponent} from './song-list.component';
-import {Component} from '@angular/core';
+import {Component, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {Routes} from '@angular/router';
 import {RouterTestingModule} from '@angular/router/testing';
 import {SongApiService} from '../shared/song-api.service';
 import {Song} from '../shared/song';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {of} from 'rxjs/internal/observable/of';
+import {MatTableModule} from '@angular/material';
 
 @Component({
   template: `
@@ -32,8 +33,9 @@ describe('SongListComponent', () => {
   let fixture: ComponentFixture<SongListComponent>;
 
   const expectSongs: Song[] = [
-    new Song('123abc', 'Hyper Hyper', 123, 'Hyper12 Hyper12', 'The first song', '789xyz'),
-    new Song('456def', 'Yipie Yipie', 456, 'Yipie23 Yipie23', 'The second song', '678hij')
+    new Song('123abc', 'Hyper Hyper', 123, '789xyz', 'The first song', 'Hyper12 Hyper12'),
+    new Song('456def', 'Yipie Yipie', 456, '678hij', 'The second song', 'Yipie23 Yipie23'),
+    new Song('999zzz', 'dritter Song', 999, 'Song3IdLyric', 'The last Song', 'Letzte von drei')
   ];
 
   beforeEach(async(() => {
@@ -49,7 +51,11 @@ describe('SongListComponent', () => {
       }],
       imports: [
         RouterTestingModule.withRoutes(routes),
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        MatTableModule
+      ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
       ]
     })
       .compileComponents();
@@ -68,9 +74,18 @@ describe('SongListComponent', () => {
 
   it('should display songs', () => {
 
-    expect(component.songs.length).toBe(2);
-    expect(component.songs[0]._id).toBe('123abc');
-    expect(component.songs[1]._id).toBe('456def');
+    expect(component.dataSource.data.length).toBe(3);
+
+    expect(component.dataSource.data[0]).toEqual(jasmine.objectContaining({
+      _id: '123abc',
+      title: 'Hyper Hyper'
+    }));
+    expect(component.dataSource.data[1]).toEqual(jasmine.objectContaining({
+      _id: '456def',
+      title: 'Yipie Yipie',
+      duration: 456,
+      lyricId: '678hij'
+    }));
   });
 
   // it('should navigate to details page by id', async(inject([Location], (location) => {
